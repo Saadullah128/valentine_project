@@ -1,0 +1,73 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  body {
+    background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    width: 350px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  }
+  
+  .teddy {
+    width: 200px;
+    margin-bottom: 15px;
+  }
+  
+  h1 {
+    color: #ff4d6d;
+  }
+  
+  .message {
+    font-size: 15px;
+    color: #555;
+  }
+  
+  h2 {
+    margin-top: 15px;
+    color: #ff6f91;
+  }
+  
+  .buttons {
+    margin-top: 20px;
+    position: relative;
+    height: 60px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  #yesBtn {
+    background-color: #ff4d6d;
+    color: white;
+  }
+  
+  #noBtn {
+    background-color: #ddd;
+    color: #333;
+    position: absolute;
+    left: 180px;
+  }
+  
+  #response {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #ff4d6d;
+  }
+  
