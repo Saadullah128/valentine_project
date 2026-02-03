@@ -149,3 +149,49 @@ button {
     height: 90px;
   }
 }
+
+
+/* 📱 FINAL mobile sizing fix */
+@media (max-width: 480px) {
+
+  body {
+    padding: 20px 0;
+  }
+
+  .card {
+    width: 90%;
+    padding: 20px 16px;
+    border-radius: 16px;
+
+    /* 🔥 THIS is the important part */
+    transform: scale(0.88);
+    transform-origin: center top;
+  }
+
+  .teddy {
+    width: 120px;
+    margin-bottom: 4px;
+  }
+
+  h1 {
+    font-size: 20px;
+    margin-bottom: 4px;
+  }
+
+  .message {
+    font-size: 13px;
+  }
+
+  h2 {
+    font-size: 17px;
+    margin: 12px 0;
+  }
+
+  .buttons {
+    height: 80px;
+  }
+
+  #response {
+    font-size: 16px;
+  }
+}
