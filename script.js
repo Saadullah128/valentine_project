@@ -1,14 +1,33 @@
-const yesBtn = document.getElementById("yesBtn");
 const noBtn = document.getElementById("noBtn");
+const yesBtn = document.getElementById("yesBtn");
+const box = document.getElementById("buttonsBox");
 const response = document.getElementById("response");
 
+/* YES click */
 yesBtn.addEventListener("click", () => {
-  response.innerHTML = "YAY!!! 💖💖💖<br>You just made me the happiest person 🥰<br>Happy Valentine’s Day, my love 🧸🌹";
+  response.innerHTML =
+    "YAY!!! 💖💖💖<br>You made a greate choice 🥰<br>Happy Valentine’s Day, cutie 🧸🌹";
 });
 
-noBtn.addEventListener("mouseover", () => {
-  const x = Math.random() * 200;
-  const y = Math.random() * 30;
-  noBtn.style.left = x + "px";
-  noBtn.style.top = y + "px";
+/* move NO button safely */
+function moveNoButton() {
+  const boxW = box.clientWidth;
+  const boxH = box.clientHeight;
+  const btnW = noBtn.offsetWidth;
+  const btnH = noBtn.offsetHeight;
+
+  const x = Math.random() * (boxW - btnW);
+  const y = Math.random() * (boxH - btnH);
+
+  noBtn.style.left = `${x}px`;
+  noBtn.style.top = `${y}px`;
+}
+
+/* desktop hover */
+noBtn.addEventListener("mouseenter", moveNoButton);
+
+/* mobile tap */
+noBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  moveNoButton();
 });
