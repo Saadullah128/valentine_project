@@ -1,18 +1,24 @@
-const noBtn = document.getElementById("noBtn");
 const yesBtn = document.getElementById("yesBtn");
-const box = document.getElementById("buttonsBox");
+const noBtn = document.getElementById("noBtn");
+const buttonsBox = document.getElementById("buttonsBox");
 const response = document.getElementById("response");
 
-/* YES click */
+const yesSound = document.getElementById("yesSound");
+const noSound = document.getElementById("noSound");
+
+/* YES: play happy sound */
 yesBtn.addEventListener("click", () => {
   response.innerHTML =
-    "YAY!!! 💖💖💖<br>You made a greate choice 🥰<br>Happy Valentine’s Day, cutie 🧸🌹";
+    "YAYYYY 💖🥰<br>You just made me the happiest person 🧸🌸";
+
+  yesSound.currentTime = 0;
+  yesSound.play();
 });
 
 /* move NO button safely */
 function moveNoButton() {
-  const boxW = box.clientWidth;
-  const boxH = box.clientHeight;
+  const boxW = buttonsBox.clientWidth;
+  const boxH = buttonsBox.clientHeight;
   const btnW = noBtn.offsetWidth;
   const btnH = noBtn.offsetHeight;
 
@@ -21,12 +27,16 @@ function moveNoButton() {
 
   noBtn.style.left = `${x}px`;
   noBtn.style.top = `${y}px`;
+
+  // 🔊 play NO sound
+  noSound.currentTime = 0;
+  noSound.play();
 }
 
-/* desktop hover */
+/* Desktop: hover */
 noBtn.addEventListener("mouseenter", moveNoButton);
 
-/* mobile tap */
+/* Mobile: tap */
 noBtn.addEventListener("click", (e) => {
   e.preventDefault();
   moveNoButton();

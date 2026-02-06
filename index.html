@@ -2,19 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- 🔥 critical: prevents mobile zoom & resizing -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>For My Valentine 💖</title>
-  <link rel="stylesheet" href="style.css?v=mobile-scale-fix">
+
+  <link rel="stylesheet" href="style.css?v=final-no-sound">
 </head>
 <body>
 
   <div class="hearts"></div>
 
   <div class="card">
-    <img src="teddybear.png" class="teddy" alt="Teddy">
+    <img src="teddybear.png" alt="Teddy Bear" class="teddy">
 
     <h1>Hey Momina Cutie 💕</h1>
     <p class="message">Special message for you 🥰</p>
@@ -28,6 +27,10 @@
 
     <p id="response"></p>
   </div>
+
+  <!-- 🔊 sounds -->
+  <audio id="yesSound" src="romance.mp3" preload="auto"></audio>
+  <audio id="noSound" src="fahh.mp3" preload="auto"></audio>
 
   <script src="script.js"></script>
 </body>

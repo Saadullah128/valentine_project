@@ -3,66 +3,45 @@
   font-family: 'Poppins', sans-serif;
 }
 
-/* 🔒 prevent mobile tap scaling */
-button {
-  touch-action: manipulation;
-  -webkit-tap-highlight-color: transparent;
-  outline: none;
-}
-
-.hearts {
-  position: fixed;
-  inset: 0;
-
-  background-image:
-    url("data:image/svg+xml;utf8,\
-<svg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 24 24'>\
-<path fill='%23ff9db4' d='M12 21s-6.7-4.35-9.33-7.2C-1.28 9.87 1.2 3.5 6.6 4.3c2.05.3 3.4 2.1 3.4 2.1s1.35-1.8 3.4-2.1c5.4-.8 7.88 5.57 3.93 9.5C18.7 16.65 12 21 12 21z'/>\
-</svg>");
-
-  background-size: 180px 200px;
-  background-repeat: repeat;
-  opacity: 0.22;
-
-  z-index: 0;
-  pointer-events: none;
-}
-
-/* 📱 slightly stronger hearts on mobile */
-@media (max-width: 480px) {
-  .hearts {
-    opacity: 0.28;
-    background-size: 160px 180px;
-  }
-}
-
-
-
-
-
 body {
   margin: 0;
   min-height: 100vh;
   background: linear-gradient(135deg, #ffdde1, #ee9ca7);
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   overflow: hidden;
+}
+
+/* 💕 tiny scattered hearts */
+.hearts {
+  position: fixed;
+  inset: 0;
+  background-image:
+    url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 24 24'>\
+<path fill='%23ff9db4' d='M12 21s-6.7-4.35-9.33-7.2C-1.28 9.87 1.2 3.5 6.6 4.3c2.05.3 3.4 2.1 3.4 2.1s1.35-1.8 3.4-2.1c5.4-.8 7.88 5.57 3.93 9.5C18.7 16.65 12 21 12 21z'/>\
+</svg>");
+  background-size: 180px 200px;
+  background-repeat: repeat;
+  opacity: 0.22;
+  z-index: 0;
+  pointer-events: none;
 }
 
 /* 💌 card */
 .card {
   background: #fff;
-  width: min(92%, 420px);
-  padding: 30px 25px;
+  padding: 28px 24px;
   border-radius: 22px;
+  width: min(92%, 420px);
   text-align: center;
   box-shadow: 0 12px 30px rgba(0,0,0,0.18);
   z-index: 1;
 }
 
 .teddy {
-  width: 180px;
+  width: 160px;
   margin-bottom: 10px;
 }
 
@@ -73,29 +52,30 @@ h1 {
 .message {
   font-size: 15px;
   color: #555;
+  line-height: 1.5;
 }
 
 h2 {
-  margin: 16px 0;
+  margin-top: 16px;
   color: #ff6f91;
 }
 
-/* 🧸 buttons container */
+/* buttons */
 .buttons {
   position: relative;
-  height: 120px; /* more room to escape */
+  height: 100px;
   margin-top: 20px;
 }
 
-/* 🔒 fixed-size buttons */
 button {
   width: 120px;
   height: 44px;
   border-radius: 30px;
-  font-size: 16px;
   border: none;
+  font-size: 16px;
   cursor: pointer;
   position: absolute;
+  touch-action: manipulation;
 }
 
 #yesBtn {
@@ -118,80 +98,14 @@ button {
   color: #ff4d6d;
 }
 
-
-/* 📱 Mobile-only fixes */
+/* 📱 mobile scaling */
 @media (max-width: 480px) {
-
   .card {
-    width: 88%;
-    padding: 22px 18px;
-    border-radius: 18px;
-  }
-
-  .teddy {
-    width: 140px;
-    margin-bottom: 6px;
-  }
-
-  h1 {
-    font-size: 22px;
-  }
-
-  .message {
-    font-size: 14px;
-  }
-
-  h2 {
-    font-size: 18px;
-  }
-
-  .buttons {
-    height: 90px;
-  }
-}
-
-
-/* 📱 FINAL mobile sizing fix */
-@media (max-width: 480px) {
-
-  body {
-    padding: 20px 0;
-  }
-
-  .card {
-    width: 90%;
-    padding: 20px 16px;
-    border-radius: 16px;
-
-    /* 🔥 THIS is the important part */
     transform: scale(0.88);
     transform-origin: center top;
   }
 
   .teddy {
     width: 120px;
-    margin-bottom: 4px;
-  }
-
-  h1 {
-    font-size: 20px;
-    margin-bottom: 4px;
-  }
-
-  .message {
-    font-size: 13px;
-  }
-
-  h2 {
-    font-size: 17px;
-    margin: 12px 0;
-  }
-
-  .buttons {
-    height: 80px;
-  }
-
-  #response {
-    font-size: 16px;
   }
 }
